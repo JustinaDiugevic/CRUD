@@ -1,4 +1,5 @@
-autoriai = [
+def load_default_data():
+    return [
     {
         'id': 1,
         "name": "Jonas",
@@ -18,7 +19,7 @@ autoriai = [
 id_counter = 4
 
 
-while True:
+def print_info():
     print("--------------------------------------------------------------------------")
     print("1. Atvaizduoti autorius")
     print("2. Įtraukti autorius i sarasa")
@@ -26,16 +27,15 @@ while True:
     print("4. šalinti autorius")
     print("5. išeiti iš programos")
     print("-----------------------------Pasirinkite:---------------------------------")
-
+    return input()
     pasirinkimas = input()
 
-    match pasirinkimas:
-        case "1":
+def print_autoriai(autoriai):
             for aut in autoriai:
                 print(f"{aut['id']}. Autorius {aut['name']} {aut['surname']}")
             print("-----------------------------------------------------------------")
 
-        case "2":
+def prideti_autoriu(id_counter):
             print("Autoriaus pridėjimas:")
             print("Įveskite vardą:")
             vardas = input()
@@ -47,10 +47,10 @@ while True:
             "name": vardas,
             "surname": pavarde
             }
-            autoriai.append(naujas_autorius)
-            id_counter += 1
 
-        case "3":
+            return naujas_autorius
+
+def redaguoti_autoriu(autoriai):
             print("Autoriu redagavimas.Pasirinkite ID įrašo kurį norite redaguoti.")
             id = input()
             for aut in autoriai:
@@ -62,7 +62,7 @@ while True:
                     aut['surname'] = input()
                     break
 
-        case "4":
+def istrinti_autoriu(autoriai):
             print("Autoriu salinimas. Pasirinkite ID įrašo kurį norite istrinti.")
             id = input()
             for aut in autoriai:
@@ -70,6 +70,3 @@ while True:
                     print(f"{aut['id']}. Autorius {aut['name']} {aut['surname']}")
                     autoriai.remove(aut)
 
-        case "5":
-            print("Sustabdyta")
-            break

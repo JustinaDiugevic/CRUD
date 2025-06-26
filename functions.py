@@ -4,22 +4,10 @@ autoriai = load_default_data()
 id_counter = 3
 
 
-def prideti_autoriu(id_counter):
-    pass
-
-def print_autoriai(autoriai):
-    pass
-
-def redaguoti_autoriu(hollidays):
-    pass
-
-def istrinti_autoriu(hollidays):
-    pass
-
 
 while True:
-    print_info()
-    choise = input()
+
+    choise =  print_info()
 
     match choise:
         case '1':
